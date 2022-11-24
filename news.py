@@ -29,7 +29,7 @@ while True:
         df = pd.DataFrame([ LAST_NEWS[i].split("\n")[0:2] for i in range(0,len(LAST_NEWS_TEST))],columns=['time','news'])
         reversed_df = df.iloc[::-1]
 
-        st.dataframe( reversed_df.head(15), width=800)
+        st.dataframe( reversed_df.head(15), use_container_width=True)
 
     time.sleep(frequency)
 
