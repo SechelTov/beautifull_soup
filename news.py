@@ -22,7 +22,7 @@ frequency = st.slider('How often do you want the news to be updated (in seconds)
 
 LAST_NEWS = []
 
-while Truw:
+while True:
     LAST_NEWS_TEST = news(LAST_NEWS)
     if LAST_NEWS != LAST_NEWS_TEST:
         LAST_NEWS = LAST_NEWS_TEST
