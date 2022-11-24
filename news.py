@@ -28,7 +28,7 @@ if LAST_NEWS != LAST_NEWS_TEST:
     df = pd.DataFrame([ LAST_NEWS[i].split("\n")[0:2] for i in range(0,len(LAST_NEWS_TEST))],columns=['time','news'])
     reversed_df = df.iloc[::-1]
 
-    st.dataframe( reversed_df.head(15), width =400)
+    st.dataframe( reversed_df.head(15))
 
 time.sleep(frequency)
 
