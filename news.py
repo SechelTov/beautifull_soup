@@ -18,17 +18,18 @@ def news(OLD_NEWS):
             #print (div.text)
     return OLD_NEWS
 
-frequency = st.slider('How often do you want the news to be updated (in seconds):', 1, 60)
+frequency = st.slider('How often do you want the news to be updated (in seconds):', 1, 60, 5)
 
 LAST_NEWS = []
 
-LAST_NEWS_TEST = news(LAST_NEWS)
-if LAST_NEWS != LAST_NEWS_TEST:
-    LAST_NEWS = LAST_NEWS_TEST
-    df = pd.DataFrame([ LAST_NEWS[i].split("\n")[0:2] for i in range(0,len(LAST_NEWS_TEST))],columns=['time','news'])
-    reversed_df = df.iloc[::-1]
+while Truw:
+    LAST_NEWS_TEST = news(LAST_NEWS)
+    if LAST_NEWS != LAST_NEWS_TEST:
+        LAST_NEWS = LAST_NEWS_TEST
+        df = pd.DataFrame([ LAST_NEWS[i].split("\n")[0:2] for i in range(0,len(LAST_NEWS_TEST))],columns=['time','news'])
+        reversed_df = df.iloc[::-1]
 
-    st.dataframe( reversed_df.head(15), width=800)
+        st.dataframe( reversed_df.head(15), width=800)
 
-time.sleep(frequency)
+    time.sleep(frequency)
 
